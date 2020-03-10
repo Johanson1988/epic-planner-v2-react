@@ -12,17 +12,19 @@ import Login from './pages/Login';
 
 import MyDayplans from './pages/MyDayplans';
 
-function App() {
-  return (
-    <div className="App">
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <AnonRoute exact path="/signup" component={Signup} />
-        <AnonRoute exact path="/login" component={Login} />
-        <PrivateRoute exact path="/my-dayplans" component={MyDayplans} />
-      </Switch>
-    </div>
-  );
-}
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <AnonRoute exact path="/signup" component={Signup} />
+          <AnonRoute exact path="/login" component={Login} />
+          <PrivateRoute exact path="/my-dayplans" component={MyDayplans} />
+        </Switch>
+      </div>
+    );
+  };
+};
 
 export default App;
