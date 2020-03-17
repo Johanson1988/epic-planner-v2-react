@@ -11,6 +11,7 @@ import Login from './pages/Login';
 //Private Pages
 
 import MyDayplans from './pages/MyDayplans';
+import CreateDayplan from './pages/CreateDayplan';
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/my-dayplans" component={MyDayplans} />
+          <Route exact path="/create-dayplan" component={CreateDayplan} />
         </Switch>
       </div>
     );
