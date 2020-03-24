@@ -27,7 +27,7 @@ export default class Signup extends Component {
     
     
     render() {
-        const { fullName, Email, password, location, keywords } = this.state;
+        const { fullName, email, password, location, keywords } = this.state;
         return(
             <div>
                 <h1>SIGNUP</h1>
@@ -43,7 +43,7 @@ export default class Signup extends Component {
           />
           </div>
 
-         <Email email={this.state.email} />
+         <Email email={email}/>
 
           <div>
           <label for="password">Password:</label>

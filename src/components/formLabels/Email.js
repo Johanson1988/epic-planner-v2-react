@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 
-export default class Email extends Component {
+export default class UserEmail extends Component {
     render() {
         return (
  <div>
@@ -9,7 +9,7 @@ export default class Email extends Component {
           <input
             type="text"
             name="email"
-            value={Email}
+            value={UserEmail}
             onChange={this.handleChange}
           />
 </div>
