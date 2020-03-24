@@ -61,7 +61,7 @@ export default class Signup extends Component {
             onChange={this.handleChange}
           />
           </div>
-{/*     */}
+
           <div>
           <label>Location:</label>
                <select id="location" onChange={this.handleChange} value={this.state.value}>
