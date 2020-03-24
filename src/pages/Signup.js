@@ -33,7 +33,7 @@ export default class Signup extends Component {
 
         <form onSubmit={this.handleFormSubmit}>
         <div>
-          <label>Name:</label>
+          <label for="fullname">Name:</label>
           <input
             type="text"
             name="fullname"
