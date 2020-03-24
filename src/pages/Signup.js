@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 // import { withAuth } from "../lib/AuthProvider";
 // import Footer from "../components/Footer";
 
+import Email from '../components/formLabels/Email';
 
 export default class Signup extends Component {
     state = {
@@ -26,14 +27,14 @@ export default class Signup extends Component {
     
     
     render() {
-        const { fullName, email, password, location, keywords } = this.state;
+        const { fullName, Email, password, location, keywords } = this.state;
         return(
             <div>
                 <h1>SIGNUP</h1>
 
         <form onSubmit={this.handleFormSubmit}>
         <div>
-          <label>Name:</label>
+          <label for="fullname">Name:</label>
           <input
             type="text"
             name="fullname"
@@ -42,18 +43,10 @@ export default class Signup extends Component {
           />
           </div>
 
-          <div>
-          <label>Email:</label>
-          <input
-            type="text"
-            name="email"
-            value={email}
-            onChange={this.handleChange}
-          />
-          </div>
+         <Email email={this.state.email} />
 
           <div>
-          <label>Password:</label>
+          <label for="password">Password:</label>
           <input
             type="password"
             name="password"
@@ -63,14 +56,13 @@ export default class Signup extends Component {
           </div>
 
           <div>
-          <label>Location:</label>
-               <select id="location" onChange={this.handleChange} value={this.state.value}>
+          <label for="location">Location:</label>
+               <select name="location" value={location} onChange={this.handleChange}>
+                  <option value="">--Choose a neighbourhood--</option>
                   <option value="Sants">Sants</option>
-                  <option value="Barceloneta">Barceloneta</option>
                   <option value="Poble Nou">Poble Nou</option>
+                  <option value="Barceloneta">Barceloneta</option>
                </select>
-               <p></p>
-               <p>{this.state.value}</p>
            </div>
        
         </form>
