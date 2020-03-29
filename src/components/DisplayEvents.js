@@ -30,6 +30,29 @@ export default class DisplayEvents extends Component {
         this.setState({ [name]: value });
     };
 
+    handleSubmit = event => {
+        event.preventDefault();
+        const {dayplanName, selectedEvents} = this.state;
+        if (dayplanName, selectedEvents) {
+            const newDayPlan = {dayplanName, selectedEvents};
+            fetch('https://example.com/profile', {
+                method: 'POST', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newDayPlan),
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                console.log('Success:', data);
+                })
+                .catch((error) => {
+                console.error('Error:', error);
+                });
+        }
+        else this.setState({errorMessage:'You must add an event name and select at least 1 event to create a dayplan'});
+    }
+
     render() {
         const events = [{name:'event1'},{name:'event2'},{name:'event3'},{name:'event4'}];
         const {dayplanName} = this.state;
