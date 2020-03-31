@@ -36,7 +36,7 @@ export default class DisplayEvents extends Component {
         // eslint-disable-next-line
         if (dayplanName, selectedEvents) {
             const newDayPlan = {dayplanName, selectedEvents};
-            fetch('http://192.168.1.134:2224/dayplan', {
+            fetch(process.env.REACT_APP_API_URL + '/dayplan', {
                 method: 'POST', // or 'PUT'
                 headers: {
                     'Content-Type': 'application/json',
