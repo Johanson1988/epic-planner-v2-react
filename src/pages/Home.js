@@ -10,6 +10,7 @@ export default class Home extends Component {
                 <Link to="/login">Login</Link>
                 <Link to="/signup">Signup</Link>
                 <Link to="/my-dayplans">My Dayplans</Link>
+                <Link to="/create-dayplan">Create a DayPlan</Link>
             </div>
         )
     }

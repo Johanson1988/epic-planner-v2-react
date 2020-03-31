@@ -33,9 +33,10 @@ export default class DisplayEvents extends Component {
     handleSubmit = event => {
         event.preventDefault();
         const {dayplanName, selectedEvents} = this.state;
+        // eslint-disable-next-line
         if (dayplanName, selectedEvents) {
             const newDayPlan = {dayplanName, selectedEvents};
-            fetch('https://example.com/profile', {
+            fetch('http://192.168.1.134:2224/dayplan', {
                 method: 'POST', // or 'PUT'
                 headers: {
                     'Content-Type': 'application/json',
@@ -68,7 +69,7 @@ export default class DisplayEvents extends Component {
                             <Event key={shortid.generate()} event={event} sendEvent={this.getSelectedEvents} checked={false}/>
                         )
                     }
-                    <button>Save Dayplan</button>
+                    <button onClick={this.handleSubmit}>Save Dayplan</button>
                 </form>
             </div>
         )
