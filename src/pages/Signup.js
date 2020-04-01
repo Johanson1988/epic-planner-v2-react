@@ -44,13 +44,13 @@ export default class Signup extends Component {
 
         <Email email={email}/>
 
-        <Password password={Password}/>
+        <Password password={password}/>
       
-        <Location location={Location}/>
+        <Location location={location}/>
        
         </form>
       
-        <Keywords keywords={Keywords}/>
+        <Keywords keywords={keywords}/>
           
         <p>Already have account?</p>
         <Link to={'/login'}> Login</Link>
