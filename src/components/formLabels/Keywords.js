@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 
 
-export default class Password extends Component {
+export default class Keywords extends Component {
     render() {
         return (
             <div>
-          <label for="password">Password:</label>
+          <label>Keywords:</label>
           <input
-            type="password"
-            name="password"
-            value={Password}
+            type="keywords"
+            name="keywords"
+            value={Keywords}
             onChange={this.handleChange}
           />
           </div>

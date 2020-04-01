@@ -3,7 +3,13 @@ import { Link } from 'react-router-dom';
 // import { withAuth } from "../lib/AuthProvider";
 // import Footer from "../components/Footer";
 
+// Form label components 
 import Email from '../components/formLabels/Email';
+import FullName from '../components/formLabels/FullName';
+import Password from '../components/formLabels/Password';
+import Location from '../components/formLabels/Location';
+import Keywords from '../components/formLabels/Keywords';
+
 
 export default class Signup extends Component {
     state = {
@@ -33,50 +39,19 @@ export default class Signup extends Component {
                 <h1>SIGNUP</h1>
 
         <form onSubmit={this.handleFormSubmit}>
-        <div>
-          <label for="fullname">Name:</label>
-          <input
-            type="text"
-            name="fullname"
-            value={fullName}
-            onChange={this.handleChange}
-          />
-          </div>
 
-         <Email email={email}/>
+        <FullName fullName={fullName}/>
 
-          <div>
-          <label for="password">Password:</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={this.handleChange}
-          />
-          </div>
+        <Email email={email}/>
 
-          <div>
-          <label for="location">Location:</label>
-               <select name="location" value={location} onChange={this.handleChange}>
-                  <option value="">--Choose a neighbourhood--</option>
-                  <option value="Sants">Sants</option>
-                  <option value="Poble Nou">Poble Nou</option>
-                  <option value="Barceloneta">Barceloneta</option>
-               </select>
-           </div>
+        <Password password={password}/>
+      
+        <Location location={location}/>
        
         </form>
       
-        <div>
-          <label>Keywords:</label>
-          <input
-            type="keywords"
-            name="keywords"
-            value={keywords}
-            onChange={this.handleChange}
-          />
-          </div>
-
+        <Keywords keywords={keywords}/>
+          
         <p>Already have account?</p>
         <Link to={'/login'}> Login</Link>
 
