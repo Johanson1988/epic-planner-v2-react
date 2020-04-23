@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 
 import shortid from 'shortid';
 import Event from './Event';
 
 
-export default class DisplayEvents extends Component {
+class DisplayEvents extends Component {
     state = {
         dayplanName : "",
         selectedEvents: []
@@ -23,7 +24,12 @@ export default class DisplayEvents extends Component {
                 return {selectedEvents};
             }
         });
-    } 
+    }
+
+    handleClick = () => {
+        this.props.addEvent('test');
+        //this.props.history.push('/');
+    }
 
     handleChange = event => {
         const { name, value } = event.target;
@@ -55,12 +61,13 @@ export default class DisplayEvents extends Component {
     }
 
     render() {
+        console.log(this.props);
         const events = [{name:'event1'},{name:'event2'},{name:'event3'},{name:'event4'}];
         const {dayplanName} = this.state;
         const {selectedEvents} = this.state;
         return(
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label htmlFor="dayplanName">Day plan Name:</label>
                     <input type="text" name="dayplanName" value={dayplanName} onChange={this.handleChange} />
                     {
@@ -69,9 +76,18 @@ export default class DisplayEvents extends Component {
                             <Event key={shortid.generate()} event={event} sendEvent={this.getSelectedEvents} checked={false}/>
                         )
                     }
-                    <button onClick={this.handleSubmit}>Save Dayplan</button>
+                    <button>Save Dayplan</button>
                 </form>
+                <button onClick={this.handleClick}>Test</button>
             </div>
         )
     }
 }
+
+const mapDispatchToProps = dispatch => {
+    return {
+        addEvent: id => { dispatch({type: 'ADD_EVENT', id: id})}
+    }
+};
+
+export default connect(null, mapDispatchToProps)(DisplayEvents)
