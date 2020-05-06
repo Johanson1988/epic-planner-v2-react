@@ -8,7 +8,15 @@ const initState = {
 }
 
 const rootReducer = (state = initState, action) => {
-    console.log(action);
+    if(action.type === 'ADD_EVENT') {
+        console.log(action.id);
+        const listOfEvents = [...state.listOfEvents, action.id];
+        return {
+            state,
+            listOfEvents
+        }
+
+    }
     return state;
 };
 
