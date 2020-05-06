@@ -78,7 +78,7 @@ class DisplayEvents extends Component {
                     }
                     <button>Save Dayplan</button>
                 </form>
-                <button onClick={this.handleClick}>Test</button>
+                <button onClick={this.handleClick}>Test</button>    
             </div>
         )
     }
